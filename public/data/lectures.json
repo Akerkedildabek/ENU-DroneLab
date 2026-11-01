@@ -1,7 +1,7 @@
 {
   "courseTitle": "Пилотсыз авиациялық жүйелер операторы (1-санат)",
   "university": "Л.Н. Гумилев атындағы Еуразия ұлттық университеті",
-  "contactEmail": "your.email@enu.kz",
+  "contactEmail": "enu.enu@enu.kz",
   "lectures": [
     {
       "id": "01",
@@ -22,7 +22,13 @@
         "presentations": [],
         "videos": [],
         "models": [],
-        "virtualTours": [],
+        "virtualTours": [ {
+            "title": "1-дәріс. ПАЖ туралы кіріспе — 3D презентация",
+            "type": "html",
+            "path": "content/lecture-01/index.html",
+            "description": "Интерактивті 3D веб-презентация"
+  }          
+        ],
         "practices": [],
         "additional": []
       }
