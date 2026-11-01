@@ -22,16 +22,16 @@ export function HomePage({ database }: { database: LectureDatabase }) {
       <div className="hero-bubble bubble-b" aria-hidden="true" />
       <div className="container hero-grid">
         <motion.div className="hero-copy" initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .75 }}>
-          <div className="eyebrow"><span className="eyebrow-line" /> ИНТЕРАКТИВТІ ОҚУ ПЛАТФОРМАСЫ</div>
+          <div className="eyebrow"><span className="eyebrow-line" /> </div>
           <div className="hero-kicker"><span className="kicker-icon"><GraduationCap size={15} /></span> Пилотсыз авиациялық жүйелер операторы (1-санат)</div>
           <h1><span>ENU</span><br/><span className="heading-accent">DroneLab</span><span className="heading-period">.</span></h1>
-          <h2>Пилотсыз авиациялық жүйелерді оқытудың цифрлық ортасы</h2>
+          <h2>Пилотсыз авиациялық жүйелерді оқыту</h2>
           <p>Дрондардың құрылысын зерттеңіз, ұшу қағидаларын меңгеріңіз және интерактивті ортада практикалық дағдыларыңызды дамытыңыз.</p>
           <div className="hero-actions"><button className="primary-button" type="button" onClick={() => go('lectures')}>Дәрістерді қарау <ArrowUpRight size={19} /></button>
             <span className="hero-microcopy"><span className="micro-icon"><Layers3 size={17}/></span> 10 оқу модулі</span>
           </div>
-          <div className="hero-meta"><span><span className="status-light" /> НАҚТЫ УАҚЫТТАҒЫ 3D</span><i />
-            <span>ЗАМАНАУИ БІЛІМ БЕРУ</span></div>
+          <div className="hero-meta"><span><span className="status-light" /> </span><i />
+            <span></span></div>
         </motion.div>
         <motion.div className="hero-visual" initial={{ opacity: 0, scale: .94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: .15 }}>
           <div className="hero-topography" aria-hidden="true" />
