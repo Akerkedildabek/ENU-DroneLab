@@ -39,3 +39,199 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #28B8
 @media(max-width:720px){.site-header{height:72px}.container{width:calc(100% - 36px)}.header-inner{gap:10px}.menu-toggle{display:flex}.site-nav{position:absolute;left:0;right:0;top:72px;background:rgba(255,255,255,.98);border-bottom:1px solid #e4edf3;flex-direction:column;align-items:stretch;padding:16px 20px 24px;gap:3px;display:none;box-shadow:0 20px 24px -25px #234b63}.site-nav.nav-open{display:flex}.site-nav>button{text-align:left;padding:12px}.site-nav .nav-cta{justify-content:space-between;margin-top:10px}.hero-section{display:block;min-height:100svh}.hero-grid{display:flex;flex-direction:column;min-height:100svh;padding-top:119px;padding-bottom:70px;align-items:stretch}.hero-copy{padding:0}.hero-kicker{margin-top:17px;font-size:10px}.hero-copy h1{font-size:clamp(72px,15vw,105px);margin:22px 0}.hero-copy h2{font-size:20px;max-width:550px}.hero-copy>p{font-size:13px;max-width:580px;margin-bottom:20px}.hero-actions{gap:16px}.primary-button{padding:15px 18px;font-size:12px}.hero-meta{margin-top:22px}.hero-visual{width:100%;height:375px;min-height:375px;margin-top:12px}.scene-marker-top{top:12%;right:4%}.scene-marker-bottom{bottom:8%;left:5%}.scroll-indicator{bottom:12px}.hero-rail{display:none}.lectures-section{padding:80px 0}.section-title-row{margin:24px 0 28px}.section-title-row h2{font-size:41px;letter-spacing:-1.8px}.section-title-row p{font-size:12px}.section-title-aside{display:none}.about-section{padding-top:75px}.about-grid{grid-template-columns:1fr;gap:27px;padding-bottom:50px}.about-intro h2{font-size:37px}.about-info{border-left:0;padding:0}.site-footer{flex-wrap:wrap}.lecture-page{padding-top:72px}.lecture-header-grid{grid-template-columns:1fr;min-height:auto}.lecture-hero-mark{display:none}.lecture-overview-grid{grid-template-columns:1fr}.lecture-breadcrumb{padding:22px 0}.lecture-header-grid h1{font-size:32px;letter-spacing:-1.1px}.lecture-content-container{padding-top:28px}.detail-section-heading h2{font-size:20px}.pdf-frame{height:380px}}
 @media(max-width:490px){.brand-label strong{font-size:17px}.brand-label small{font-size:7px;letter-spacing:1.3px}.brand-emblem{width:37px;height:37px}.eyebrow{font-size:8px;letter-spacing:1.9px}.hero-copy h1{font-size:72px}.hero-kicker{font-size:9px;letter-spacing:-.2px}.hero-copy h2{font-size:18px}.hero-copy>p{font-size:12px}.hero-visual{height:300px;min-height:300px;margin-top:16px}.scene-marker{font-size:7px}.scene-marker-bottom{left:0}.hero-meta{font-size:8px;gap:11px}.hero-meta span:last-child{display:none}.hero-meta i{display:none}.lecture-grid{grid-template-columns:1fr;gap:14px}.lecture-card,.lecture-card-link{min-height:208px}.lecture-top{margin-bottom:19px}.lecture-card h3{min-height:0;font-size:16px;margin-bottom:24px}.lecture-bottom{padding-top:12px}.lectures-bottom-note>span:last-child{display:none}.overview-card{padding:21px}.lab-viewport{height:305px;min-height:305px}.lab-sidebar{padding:22px}.lab-actions button{flex:1}.lecture-page-end{flex-direction:column;align-items:flex-start}.resource-head{flex-wrap:wrap}.pdf-frame{height:310px}.model-canvas{height:320px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+
+
+
+/* ===============================
+   IDSAI READ-ONLY PDF VIEWER
+================================ */
+
+.protected-pdf {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #dceaf0;
+  border-radius: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Header */
+.protected-pdf-header {
+  padding: 18px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e6eef3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.protected-pdf-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #14334c;
+  font-size: 14px;
+}
+
+.protected-pdf-icon {
+  color: #169fc4;
+  font-size: 23px;
+}
+
+.protected-pdf-status {
+  background: #eaf8f2;
+  border: 1px solid #d0eee0;
+  color: #208765;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* PDF Slide */
+.protected-pdf-content {
+  min-height: 300px;
+  background: #edf3f7;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.protected-pdf-page {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  box-shadow: 0 10px 35px rgba(15, 48, 70, .10);
+}
+
+.protected-pdf-page canvas {
+  display: block;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.protected-pdf-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: rgba(22, 52, 82, .22);
+  font-size: clamp(17px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+  transform: rotate(-25deg);
+}
+
+.protected-pdf-watermark small {
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+/* Controls */
+.protected-pdf-controls {
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-top: 1px solid #e3edf2;
+}
+
+.protected-pdf-controls button {
+  padding: 11px 17px;
+  background: #169fbe;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.protected-pdf-controls button:hover:not(:disabled) {
+  background: #087a99;
+}
+
+.protected-pdf-controls button:disabled {
+  background: #d6e2e8;
+  color: #8399a5;
+  cursor: not-allowed;
+}
+
+.protected-pdf-counter {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #1d3b52;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.protected-pdf-separator {
+  color: #a5b4be;
+}
+
+.protected-pdf-loading {
+  padding: 80px 20px;
+  color: #647e91;
+  text-align: center;
+}
+
+.protected-pdf-description {
+  margin: 0;
+  padding: 14px 20px 0;
+  color: #6c8091;
+  font-size: 12px;
+}
+
+.protected-pdf-notice {
+  padding: 15px 20px;
+  margin: 0;
+  color: #8095a5;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .protected-pdf-header {
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+
+  .protected-pdf-content {
+    padding: 8px;
+  }
+
+  .protected-pdf-controls {
+    padding: 12px 8px;
+  }
+
+  .protected-pdf-controls button {
+    padding: 10px 11px;
+    font-size: 11px;
+  }
+
+  .protected-pdf-watermark {
+    font-size: 15px;
+  }
+}
+
+/* Hide viewer during printing */
+@media print {
+  .protected-pdf {
+    display: none !important;
+  }
+}
