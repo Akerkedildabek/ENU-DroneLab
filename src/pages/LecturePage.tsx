@@ -18,11 +18,11 @@ export function LecturePage({ database }: { database: LectureDatabase }) {
     <div className="container lecture-breadcrumb"><Link to="/?section=lectures"><ArrowLeft size={16}/> Дәрістер тізімі</Link><span>/</span><span>{String(lecture.number).padStart(2,'0')}-дәріс</span></div>
     <div className="lecture-header-area"><div className="container lecture-header-grid">
       <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:.5}}>
-        <div className="section-eyebrow"><span className="small-dash"/> {String(lecture.number).padStart(2,'0')} / 10 · ОҚУ МОДУЛІ</div>
+        <div className="section-eyebrow"><span className="small-dash"/> {String(lecture.number).padStart(2,'0')} / {String(database.lectures.length).padStart(2,'0')} · ОҚУ МОДУЛІ</div>
         <h1>{lecture.title}</h1><p>{lecture.introduction}</p>
         <div className="lecture-header-tags"><span><BookOpen size={16}/> {lecture.number}-дәріс</span><span className={ready ? 'tag-ready' : ''}><Layers3 size={15}/>{ready ? 'Материалдар жарияланған' : 'Материалдар толықтырылады'}</span></div>
       </motion.div>
-      <div className="lecture-hero-mark" aria-hidden="true"><div className="lecture-mark-ring"><span>{String(lecture.number).padStart(2,'0')}</span></div><small>ENU · DRONELAB</small></div>
+      <div className="lecture-hero-mark" aria-hidden="true"><div className="lecture-mark-ring"><span>{String(lecture.number).padStart(2,'0')}</span></div><small>IDSAI · DRONE CENTER</small></div>
     </div></div>
     <div className="container lecture-content-container">
       <div className="lecture-overview-grid">
