@@ -24,9 +24,9 @@ export function HomePage({ database }: { database: LectureDatabase }) {
       <div className="container hero-grid">
         <motion.div className="hero-copy" initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .75 }}>
           <div className="eyebrow"><span className="eyebrow-line" /> </div>
-          <div className="hero-kicker"><span className="kicker-icon"><GraduationCap size={15} /></span> Пилотсыз авиациялық жүйелер операторы (1-санат)</div>
+          <div className="hero-kicker"><span className="kicker-icon"><GraduationCap size={15} /></span>Ұшқышсыз авиациялық жүйелерінің операторы (категория 1)</div>
           <h1><span>IDSAI</span><br/><span className="heading-accent">Drone Center</span><span className="heading-period">.</span></h1>
-          <h2>Пилотсыз авиациялық жүйелерді оқыту</h2>
+          <h2>Ұшқышсыз авиациялық жүйелерінің операторы (категория 1)</h2>
           <p>Дрондардың құрылысын зерттеңіз, ұшу қағидаларын меңгеріңіз және интерактивті ортада практикалық дағдыларыңызды дамытыңыз.</p>
           <div className="hero-actions"><button className="primary-button" type="button" onClick={() => go('lectures')}>Дәрістерді қарау <ArrowUpRight size={19} /></button>
             <span className="hero-microcopy"><span className="micro-icon"><Layers3 size={17}/></span> {lectureCount} оқу модулі</span>
