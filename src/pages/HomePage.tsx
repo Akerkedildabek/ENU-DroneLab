@@ -8,6 +8,7 @@ import { LectureCard } from '../components/lectures/LectureCard'
 
 export function HomePage({ database }: { database: LectureDatabase }) {
   const location = useLocation()
+  const lectureCount = database.lectures.length
   useEffect(() => {
     const section = new URLSearchParams(location.search).get('section')
     if (section && ['home', 'lectures', 'contact'].includes(section)) {
@@ -24,11 +25,11 @@ export function HomePage({ database }: { database: LectureDatabase }) {
         <motion.div className="hero-copy" initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .75 }}>
           <div className="eyebrow"><span className="eyebrow-line" /> </div>
           <div className="hero-kicker"><span className="kicker-icon"><GraduationCap size={15} /></span> Пилотсыз авиациялық жүйелер операторы (1-санат)</div>
-          <h1><span>ENU</span><br/><span className="heading-accent">DroneLab</span><span className="heading-period">.</span></h1>
+          <h1><span>IDSAI</span><br/><span className="heading-accent">Drone Center</span><span className="heading-period">.</span></h1>
           <h2>Пилотсыз авиациялық жүйелерді оқыту</h2>
           <p>Дрондардың құрылысын зерттеңіз, ұшу қағидаларын меңгеріңіз және интерактивті ортада практикалық дағдыларыңызды дамытыңыз.</p>
           <div className="hero-actions"><button className="primary-button" type="button" onClick={() => go('lectures')}>Дәрістерді қарау <ArrowUpRight size={19} /></button>
-            <span className="hero-microcopy"><span className="micro-icon"><Layers3 size={17}/></span> 10 оқу модулі</span>
+            <span className="hero-microcopy"><span className="micro-icon"><Layers3 size={17}/></span> {lectureCount} оқу модулі</span>
           </div>
           <div className="hero-meta"><span><span className="status-light" /> </span><i />
             <span></span></div>
@@ -46,12 +47,12 @@ export function HomePage({ database }: { database: LectureDatabase }) {
 
     <section id="lectures" className="lectures-section">
       <div className="container">
-        <div className="lectures-topline"><div className="section-eyebrow"><span className="small-dash" /> КУРС ҚҰРЫЛЫМЫ / 01—10</div><span className="section-number">01 / БІЛІМ БЕРУ</span></div>
+        <div className="lectures-topline"><div className="section-eyebrow"><span className="small-dash" /> КУРС ҚҰРЫЛЫМЫ / 01—{String(lectureCount).padStart(2, '0')}</div><span className="section-number">01 / БІЛІМ БЕРУ</span></div>
         <div className="section-title-row"><div><h2>Оқу <span>материалдары</span></h2><p>ПАЖ операторы (1-санат) курсының дәрістері мен практикалық материалдары</p></div>
-          <div className="section-title-aside"><BookOpenText size={24} /><span>10 дәріс<br/>Бір цифрлық орта</span></div>
+          <div className="section-title-aside"><BookOpenText size={24} /><span>{lectureCount} дәріс<br/>Бір цифрлық орта</span></div>
         </div>
         <div className="lecture-grid">{database.lectures.map((lecture, index) => <LectureCard lecture={lecture} index={index} key={lecture.id} />)}</div>
-        <div className="lectures-bottom-note"><span><span className="note-dot"/> Дәрістер кезең-кезеңімен толықтырылады</span><span>2026 / ENU DRONELAB <ArrowRight size={16}/></span></div>
+        <div className="lectures-bottom-note"><span><span className="note-dot"/> Барлық дәріс слайдтары жарияланды</span><span>2026 / IDSAI DRONE CENTER <ArrowRight size={16}/></span></div>
       </div>
     </section>
 
@@ -59,7 +60,7 @@ export function HomePage({ database }: { database: LectureDatabase }) {
       <div className="container about-grid">
         <div className="about-intro"><div className="section-eyebrow"><span className="small-dash"/> БІЗ ТУРАЛЫ</div>
           <h2>Білім мен<br/><span>технология тоғысқан орта.</span></h2>
-          <p>ENU DroneLab — пилотсыз авиациялық жүйелерді оқытуға арналған интерактивті цифрлық оқу платформасы.</p>
+          <p>IDSAI Drone Center — пилотсыз авиациялық жүйелерді оқытуға арналған интерактивті цифрлық оқу платформасы.</p>
           <div className="about-badge"><MoveUpRight size={19}/> Future of UAS Education</div>
         </div>
         <div className="about-info">
@@ -68,7 +69,7 @@ export function HomePage({ database }: { database: LectureDatabase }) {
           <div className="about-info-line"><span className="about-info-icon"><Mail size={21}/></span><div><small>БАЙЛАНЫС</small><a href={`mailto:${database.contactEmail}`}>{database.contactEmail}</a></div></div>
         </div>
       </div>
-      <div className="container"><div className="site-footer"><strong>ENU <span>DroneLab</span></strong><span>© 2026 ENU DroneLab. Барлық құқықтар қорғалған.</span><button type="button" onClick={() => go('home')}>Жоғарыға <ArrowUpRight size={16}/></button></div></div>
+      <div className="container"><div className="site-footer"><strong>IDSAI <span>Drone Center</span></strong><span>© 2026 IDSAI Drone Center. Барлық құқықтар қорғалған.</span><button type="button" onClick={() => go('home')}>Жоғарыға <ArrowUpRight size={16}/></button></div></div>
     </section>
   </main>
 }
