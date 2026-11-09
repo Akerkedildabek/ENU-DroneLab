@@ -33,13 +33,15 @@ function SingleMaterial({ material }: { material: Material }) {
       <div className="resource-head"><div><FileText size={18} /><strong>{material.title}</strong></div>
         <a href={url} target="_blank" rel="noopener noreferrer">Толық ашу <ExternalLink size={15} /></a></div>
       <iframe title={material.title} src={url} className="pdf-frame" loading="lazy" />
-      <div className="resource-hint">PDF ашылмаса, «Толық ашу» сілтемесін пайдаланыңыз.</div>
+      <div className="resource-hint">{material.description ? `${material.description} ` : ''}PDF ашылмаса, «Толық ашу» сілтемесін пайдаланыңыз.</div>
     </div>
   )
   if (type === 'mp4') return <div className="resource-detail">
-    <div className="resource-head"><div><Film size={18} /><strong>{material.title}</strong></div></div>
-    <video className="video-frame" controls preload="metadata"><source src={url} type="video/mp4" />
+    <div className="resource-head"><div><Film size={18} /><strong>{material.title}</strong></div>
+      <a href={url} target="_blank" rel="noopener noreferrer">Жеке ашу <ExternalLink size={15} /></a></div>
+    <video className="video-frame" controls playsInline preload="metadata"><source src={url} type="video/mp4" />
       Браузер MP4 бейнесін көрсете алмады.</video>
+    {material.description && <div className="resource-hint">{material.description}</div>}
   </div>
   if (type === 'youtube') {
     const embed = youtubeEmbed(material.url || '')
