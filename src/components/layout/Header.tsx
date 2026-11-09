@@ -22,9 +22,9 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <button type="button" onClick={() => go('home')} className="brand" aria-label="ENU DroneLab — басты бет">
+        <button type="button" onClick={() => go('home')} className="brand" aria-label="IDSAI Drone Center — басты бет">
           <span className="brand-emblem"><span className="emblem-cross">✦</span></span>
-          <span className="brand-label"><strong>ENU <em>DroneLab</em></strong><small>UAS EDUCATION PLATFORM</small></span>
+          <span className="brand-label"><strong>IDSAI <em>Drone Center</em></strong><small>UAS EDUCATION PLATFORM</small></span>
         </button>
         <nav className={`site-nav ${open ? 'nav-open' : ''}`} aria-label="Негізгі навигация">
           {menu.map(item => <button key={item.id} type="button" onClick={() => go(item.id)}>{item.label}</button>)}
